@@ -24,7 +24,7 @@ unsafe extern "C" fn handle() {
 
 #[no_mangle]
 unsafe extern "C" fn init() {
-    let init_message: String = msg::load().expect("Cant load init message");
+    let init_message = String::from_utf8(msg::load_bytes().expect("Cant load init message"));
     debug!("Program was initialized with message {:?}", init_message);
 }
 

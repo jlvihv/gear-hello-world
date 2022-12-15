@@ -7,7 +7,7 @@ fn hello_test() {
     let sys = System::new();
     sys.init_logger();
     let program = Program::current(&sys);
-    let res = program.send(2, String::from("INIT MESSAGE"));
+    let res = program.send_bytes(2, String::from("INIT MESSAGE"));
     assert!(!res.main_failed());
     assert!(res.log().is_empty());
 
