@@ -12,9 +12,11 @@ unsafe extern "C" fn handle() {
     let input_message: InputMessages = msg::load().expect("Error in loading InputMessages");
     match input_message {
         InputMessages::SendHelloTo(account) => {
+            debug!("Message: SendHelloTo {:?}", account);
             msg::send(account, String::from("Hello"), 0).expect("Error in sending Hello message to account");
         },
         InputMessages::SendHelloReply => {
+            debug!("Message: SendHelloReply");
             msg::reply(String::from("Hello"), 0).expect("Error in sending reply");
         }
     }
@@ -28,6 +30,8 @@ unsafe extern "C" fn init() {
 
 gstd::metadata! {
     title: "Hello world contract",
+    init:
+        input: String,
     handle:
         input: InputMessages,
         output: String,
