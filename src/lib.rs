@@ -17,7 +17,7 @@ unsafe extern "C" fn handle() {
         },
         InputMessages::SendHelloReply => {
             debug!("Message: SendHelloReply");
-            msg::reply(String::from("Hello"), 0).expect("Error in sending reply");
+            msg::reply(String::from("Hello!"), 0).expect("Error in sending reply");
         }
     }
 }
