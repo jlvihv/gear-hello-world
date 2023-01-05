@@ -1,5 +1,9 @@
+let nodeAddress = process.env.REACT_APP_NODE_ADDRESS;
+if (!nodeAddress) {
+  nodeAddress = "wss://rpc-node.gear-tech.io";
+}
 const ADDRESS = {
-  NODE: process.env.REACT_APP_NODE_ADDRESS as string,
+  NODE: nodeAddress,
   DAPPS_API: process.env.REACT_APP_DAPPS_API_ADDRESS as string,
 };
 
