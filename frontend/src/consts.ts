@@ -1,5 +1,6 @@
-let nodeAddress = process.env.REACT_APP_NODE_ADDRESS;
-if (!nodeAddress) {
+// let nodeAddress = process.env.REACT_APP_NODE_ADDRESS;
+let nodeAddress = process.env.PROVIDER_ADDRESS;
+if (!nodeAddress || nodeAddress === "") {
   nodeAddress = "wss://rpc-node.gear-tech.io";
 }
 const ADDRESS = {
